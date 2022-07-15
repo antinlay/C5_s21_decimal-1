@@ -3,7 +3,7 @@
 int bit_num(int bit) { return bit % 32; }
 int int_num(int bit) { return bit / 32; }
 
-int lastBitDec(s21_decimal src) {
+int last_bit_dec(s21_decimal src) {
   int num = 0;
   for (int i = 95; i >= 0; i--) {
     if (get_bit(src, i)) {
@@ -60,7 +60,7 @@ void clean(s21_decimal *value) {
   value->bits[2] = 0;
 }
 
-void fullclean(s21_decimal *value) {
+void full_clean(s21_decimal *value) {
   clean(value);
   value->bits[3] = 0;
 }

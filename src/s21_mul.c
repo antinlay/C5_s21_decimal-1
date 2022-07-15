@@ -23,7 +23,7 @@ int round_one(s21_decimal value, s21_decimal *result) {
 
 int multiply(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
   int err = 0;
-  fullclean(result);
+  full_clean(result);
   if (get_first_bit(value_1) != -1 && get_first_bit(value_2) != -1) {
     for (int i = 0; i < 95; i++) {
       s21_decimal temp = value_1;

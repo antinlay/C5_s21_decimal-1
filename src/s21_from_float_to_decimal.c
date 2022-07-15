@@ -8,7 +8,7 @@ int s21_from_float_to_decimal(float src, s21_decimal *dst) {
       dst == NULL) {
     err = 1;
   } else if (src) {
-    fullclean(dst);
+    full_clean(dst);
     s21_float floatDigit = {0};
     floatDigit.f = src;
     if ((dst->sign = floatDigit.sign)) {
@@ -39,7 +39,7 @@ int s21_from_float_to_decimal(float src, s21_decimal *dst) {
       err = 1;
     }
   } else {
-    fullclean(dst);
+    full_clean(dst);
   }
   return err;
 }

@@ -4,7 +4,7 @@ int s21_floor(s21_decimal value, s21_decimal *result) {
   int err = 0;
   if (result == NULL || value.exp > 28) err = 1;
   if (!err) {
-    fullclean(result);
+    full_clean(result);
     s21_decimal one = {{1}};
     s21_decimal res = {0};
     s21_decimal zero = {0};

@@ -1,7 +1,7 @@
 #include "s21_decimal.h"
 
 int s21_mod(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
-  fullclean(result);
+  full_clean(result);
   s21_decimal tmp = {{1}};
   int err = 0, sign = 0;
   if (result != NULL) {
@@ -16,7 +16,7 @@ int s21_mod(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
           err = 3;
         } else if (get_first_bit(value_1) == -1 ||
                    s21_is_equal(value_1, value_2)) {
-          fullclean(result);
+          full_clean(result);
         } else {
           cast_scale(&value_1, &value_2);
           s21_div_int(value_1, value_2, &tmp, result);

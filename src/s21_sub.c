@@ -5,7 +5,7 @@ int subtraction(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
   int cast = 0;
   if (value_1.exp != value_2.exp) cast = cast_scale(&value_1, &value_2);
   if (cast) {
-    s21_roundBank(value_2, &value_2);
+    round_bank(value_2, &value_2);
     cast_scale(&value_1, &value_2);
   }
   result->exp = value_2.exp;
@@ -25,7 +25,7 @@ int subtraction(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
 }
 
 int s21_sub(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
-  fullclean(result);
+  full_clean(result);
   int err = 0;
   if (result != NULL) {
     if (value_1.exp > 28 || value_2.exp > 28) {

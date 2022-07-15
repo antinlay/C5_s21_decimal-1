@@ -1,7 +1,7 @@
 #include "s21_decimal.h"
 
 int s21_truncate(s21_decimal value, s21_decimal *result) {
-  fullclean(result);
+  full_clean(result);
   int err = 0;
   s21_decimal ten = {{10, 0, 0, 0}};
   if (result == NULL || value.exp > 28) err = 1;

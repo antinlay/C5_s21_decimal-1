@@ -10,7 +10,7 @@ int addition(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
     set_bit(result, BITi, ((x ^ y) ^ owerflow));
     owerflow = ((x + y + owerflow) > 1) ? 1 : 0;
     if (BITi == 95 && owerflow) {
-      fullclean(result);
+      full_clean(result);
       err = 1;
     }
   }
@@ -18,7 +18,7 @@ int addition(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
 }
 
 int s21_add(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
-  fullclean(result);
+  full_clean(result);
   int err = 0;
   if (result != NULL) {
     if (value_1.exp > 28 || value_2.exp > 28) {

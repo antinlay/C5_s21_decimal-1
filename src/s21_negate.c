@@ -1,7 +1,7 @@
 #include "s21_decimal.h"
 
 int s21_negate(s21_decimal value, s21_decimal *result) {
-  fullclean(result);
+  full_clean(result);
   int err = 0;
   if (result == NULL || value.exp > 28) err = 1;
   if (!err) {

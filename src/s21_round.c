@@ -12,8 +12,8 @@ s21_decimal rnd(s21_decimal value, s21_decimal *tmp) {
   return res;
 }
 
-void s21_roundBank(s21_decimal value, s21_decimal *result) {
-  fullclean(result);
+void round_bank(s21_decimal value, s21_decimal *result) {
+  full_clean(result);
   s21_decimal one = {{1}};
   s21_decimal res = {0};
   int rem = 0;
@@ -30,7 +30,7 @@ void s21_roundBank(s21_decimal value, s21_decimal *result) {
 }
 
 int s21_round(s21_decimal value, s21_decimal *result) {
-  fullclean(result);
+  full_clean(result);
   s21_decimal tmp = {{0, 0, 0, 0}}, one = {{1, 0, 0, 0}};
   int err = 0;
   if (result == NULL || value.exp > 28) err = 1;

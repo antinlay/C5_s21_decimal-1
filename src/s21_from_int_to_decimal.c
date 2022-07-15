@@ -7,14 +7,14 @@ int s21_from_int_to_decimal(int src, s21_decimal *dst) {
       dst == NULL) {
     err = 1;
   } else if (src) {
-    fullclean(dst);
+    full_clean(dst);
     if (src < 0) {
       dst->sign = 1;
       src = -src;
     }
     dst->bits[0] = src;
   } else {
-    fullclean(dst);
+    full_clean(dst);
   }
   return err;
 }

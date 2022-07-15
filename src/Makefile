@@ -1,14 +1,14 @@
-GCC =gcc -Wall -Werror -Wextra -g
+GCC = gcc -Wall -Werror -Wextra -g
 SOURCE = $(wildcard s21_*.c)
 OBJ = $(SOURCE:.c=.o)
-GCOVFLAGS=-L. --coverage
-HTML=lcov -t "test" -o rep.info -c -d .
+GCOVFLAGS =-L. --coverage
+HTML = lcov -t "test" -o rep.info -c -d .
 OS = $(shell uname)
 
 ifeq ($(OS), Darwin)
 	CHECK_H=-lcheck
 else
-	CHECK_H=-lcheck -pthread -lrt -lm
+	CHECK_H=-lcheck -pthread -lrt -lm -lsubunit
 endif
 
 all: gcov_report

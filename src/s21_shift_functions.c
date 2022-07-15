@@ -3,7 +3,7 @@
 void err_clean(s21_decimal *value, int *err) {
   if (*err) {
     if (value->sign) *err = 2;
-    fullclean(value);
+    full_clean(value);
   }
 }
 
@@ -16,7 +16,7 @@ int check_decimal(s21_decimal value) {
 }
 
 void check_empty(s21_decimal *value) {
-  if (get_first_bit(*value) == -1) fullclean(value);
+  if (get_first_bit(*value) == -1) full_clean(value);
 }
 
 int shift_left(s21_decimal *value, int moves) {
@@ -63,7 +63,7 @@ int cast_scale(s21_decimal *value_1, s21_decimal *value_2) {
   } else {
     int deltaScale = value_1->exp - value_2->exp;
     if (deltaScale < 0) deltaScale = -deltaScale;
-    int limitDec = 95 - lastBitDec(*minExp);
+    int limitDec = 95 - last_bit_dec(*minExp);
     int checkScale = deltaScale * 3;
     int check = (checkScale > limitDec) ? 0 : 1;
     if (check) {

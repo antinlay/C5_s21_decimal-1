@@ -43,7 +43,7 @@ s21_decimal div_only_bits(s21_decimal value_1, s21_decimal value_2) {
 }
 
 int s21_div(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
-  fullclean(result);
+  full_clean(result);
   s21_decimal tmp = {{1, 0, 0, 0}}, divisor = value_2, dividend = value_1,
               quotient = {{0}};
   int err = 0, sign = 1;
@@ -54,7 +54,7 @@ int s21_div(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
     if (get_first_bit(value_2) == -1) {
       err = 3;
     } else if (get_first_bit(value_1) == -1) {
-      fullclean(result);
+      full_clean(result);
     } else if ((get_first_bit(value_1) == 95 && s21_is_less(divisor, tmp) &&
                 sign) ||
                (get_first_bit(value_2) == 95 && s21_is_less(dividend, tmp) &&
@@ -82,7 +82,7 @@ int s21_div(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
           quotient.exp++;
         } else {
           err = 2;
-          fullclean(result);
+          full_clean(result);
           break;
         }
       }

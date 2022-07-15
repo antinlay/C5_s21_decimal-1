@@ -6,7 +6,7 @@ int s21_from_decimal_to_int(s21_decimal src, int *dst) {
   if (dst == NULL) {
     err = 1;
   } else {
-    if (src.mantysa[0] <= INT32_MAX && !src.mantysa[1] && !src.mantysa[2]) {
+    if (src.mantysa[0] <= 2147483647 && !src.mantysa[1] && !src.mantysa[2]) {
       *dst = src.mantysa[0];
       if (src.sign) *dst *= -1;
       err = 0;
