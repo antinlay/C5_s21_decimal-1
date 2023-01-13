@@ -67,7 +67,7 @@ int check_decimal(s21_decimal value);
 int cast_scale(s21_decimal *value_1, s21_decimal *value_2);
 void check_empty(s21_decimal *value);
 void err_clean(s21_decimal *value, int *err);
-// addition functions
+// additional functions
 int subtraction(s21_decimal value_1, s21_decimal value_2, s21_decimal *result);
 int addition(s21_decimal value_1, s21_decimal value_2, s21_decimal *result);
 int multiply(s21_decimal value_1, s21_decimal value_2, s21_decimal *result);
